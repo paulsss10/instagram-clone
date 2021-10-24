@@ -1,0 +1,44 @@
+.header-section {
+    width: 100%;
+    background: $white;
+    transition: height .2s ease-in-out;
+    box-shadow: 0px 1px #DBDBDB;
+    z-index: 3;
+    position: fixed;
+
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 54px;
+        margin: 0 auto;
+        max-width: 975px;
+
+
+        .logo {
+            padding-top: 8px;
+        }
+
+        .menus {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+            a {
+                &:not(:last-child) {
+                    margin-right: 18px;
+                }
+            }
+
+            .profile-menu {
+                img {
+                    width: 27px;
+                    height: 27px;
+                    border-radius: 18px;
+                }
+            }
+        }
+    }
+}
