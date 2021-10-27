@@ -2,6 +2,7 @@ import './SASS/styles.scss';
 import Header from './components/Header/header';
 import Stories from './components/Stories/stories_section';
 import Suggestions from './components/Suggestions/suggestions';
+import Feeds from './components/IG_Feeds/feed';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <div className="main-content__wrapper">
           <div className="left">
             <Stories />
-            aaaaaaaaaa
+            <Feeds />
           </div>
 
           <div className="right">

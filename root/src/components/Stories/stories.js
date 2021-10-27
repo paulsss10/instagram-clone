@@ -53,12 +53,10 @@ const CardStories = () => {
         },
     ])
 
-    
-
     return (
-      <div className="card__container">
+      <div className="card__container container--px">
         {storyElements.map((story) => (
-          <div className="story__container card">
+          <div className="story__container card ">
             <div className="card__image">
               <img className="card__thumnails" src={story.thumbnailImage} />
             </div>
