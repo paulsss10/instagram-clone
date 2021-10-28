@@ -132,12 +132,74 @@
                 }
               }
 
-              .postImage__container {
-                img {
-                  border-radius: 0;
-                  height: 50%;
+              
+            }
+          }
+
+          .postImage__container {
+            position: relative;
+            height: 31rem;
+            width: 100%;
+            @include breakpoint-up(large) {
+              position: relative;
+              height: 31rem;
+              width: 100%;
+            } 
+            img {
+              object-fit: cover;
+              left: 0;
+              top: 0;
+              width: 100%;
+              user-select: none;
+              border-radius: 0;
+              position: absolute;
+              height: 100%;
+            }
+          }
+
+          .postActions__container {
+            padding: 0 1rem 1.5rem 1rem;
+            .postActions__wrapper {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              margin-top: 0.25rem;
+              padding: 0.675rem 0;
+  
+              .postActions__left {
+                a {
+                  width: 24px;
+                  height: 24px;
+                  // padding: 8px 8px;
+
+                  &:not(:first-child) {
+                    padding: 8px 0 8px 15px;
+                  }
                 }
               }
+            }
+
+            .postLikesCount__wrapper {
+              h3 {
+                font-size: 14px;
+              }
+            }
+
+            .postTitle__wrapper {
+              p {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.5;
+                
+                span {
+                  font-weight: bold;
+                }
+                
+              }
+            }
+
+            .postComment__wrapper {
+              
             }
           }
         }

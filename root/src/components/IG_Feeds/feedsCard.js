@@ -1,58 +1,106 @@
-import React, {useState} from 'react';
-import thumbnail from '../../rsrcs/thumbnail-story.jpg';
-import postImage from '../../rsrcs/postImage-dummy.jpg';
+import React, { useState } from "react";
+import thumbnail from "../../rsrcs/thumbnail-story.jpg";
+import postImage from "../../rsrcs/postImage-dummy.jpg";
+import likeIcon from "../../rsrcs/heart-icon.svg";
+import commentIcon from "../../rsrcs/comment-icon.svg";
+import shareIcon from "../../rsrcs/PaperPlaneTilt.svg";
+import bookmarkIcon from "../../rsrcs/bookmark-icon.svg";
 
 const FeedsCard = () => {
-    const [feedContent, setFeedContent] = useState([
+  const [feedContent, setFeedContent] = useState([
+    {
+      userHandle: "jordi_alba18",
+      userProfile: thumbnail,
+      userSponsor: "",
+      postImage: postImage,
+      postTitle:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae dictum ex. Duis eget urna ac metus egestas fringilla sed ac sapien. #postText.",
+      like: 25000,
+      comments: [
         {
-            userHandle: 'User Handle',
-            userProfile: thumbnail,
-            postImage: postImage,
-            postText: 'Post Text #postText.',
-            like: 16,
-            comments: [
-                {
-                    commenterHandle: 'Commenter 1',
-                    comment: 'Hey this is a comment!',
-                    like: 2
-                },
-                {
-                    commenterHandle: 'Commenter 2',
-                    comment: 'Hey this is a comment!',
-                    like: 1
-                },
-            ]
+          commenterHandle: "Commenter 1",
+          comment: "Hey this is a comment!",
+          like: 2,
         },
-    ])
+        {
+          commenterHandle: "Commenter 2",
+          comment: "Hey this is a comment!",
+          like: 1,
+        },
+      ],
+    },
+  ]);
 
-    return (
-      <>
-        {feedContent.map((feed) => (
-          <div className="feeds__card">
-            <div className="feeds__userInfo">
-              <div className="userProfile__container">
-                <div className="postCard__header">
-                  <img
-                    alt="user"
-                    className="userProfile"
-                    src={feed.userProfile}
-                  />
+  return (
+    <>
+      {feedContent.map((feed) => (
+        <div className="feeds__card">
+          {/* card header */}
+          <div className="feeds__userInfo">
+            <div className="userProfile__container">
+              <div className="postCard__header">
+                <img
+                  alt="user"
+                  className="userProfile"
+                  src={feed.userProfile}
+                />
 
-                  <div className="userDetails__container">
-                    <h3>jordi_alba18</h3>
-                    <small>blablabla</small>
-                  </div>
-                </div>
-
-                <div className="postImage__container">
-                  <img alt="post image" src={feed.postImage} />
+                <div className="userDetails__container">
+                  <h3>{feed.userHandle}</h3>
+                  <small>{feed.userSponsor}</small>
                 </div>
               </div>
             </div>
           </div>
-        ))}
-      </>
-    );
-}
 
-export default FeedsCard
+          {/* card post image */}
+          <div className="postImage__container">
+            <img alt="post image" src={feed.postImage} />
+          </div>
+
+          {/* card actions (like, comment, share, bookmark & comment section) */}
+          <div className="postActions__container">
+            <div className="postActions__wrapper">
+              <div className="postActions__left">
+                <a>
+                  <img src={likeIcon} />
+                </a>
+                <a>
+                  <img src={commentIcon} />
+                </a>
+                <a>
+                  <img src={shareIcon} />
+                </a>
+              </div>
+
+              <div className="postActions__right">
+                <a>
+                  <img src={bookmarkIcon} />
+                </a>
+              </div>
+            </div>
+
+            <div className="postLikesCount__wrapper">
+              <h3>{feed.like.toLocaleString()} Likes</h3>
+            </div>
+
+            <div className="postTitle__wrapper" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'break-word' }}>
+              <p>
+                <a>
+                  <span>{feed.userHandle}</span>
+                </a>{" "}
+                {feed.postTitle}
+              </p>
+            </div>
+
+            <div className="postComment__wrapper">
+
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};
+
+export default FeedsCard;
