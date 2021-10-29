@@ -5,6 +5,7 @@ import likeIcon from "../../rsrcs/heart-icon.svg";
 import commentIcon from "../../rsrcs/comment-icon.svg";
 import shareIcon from "../../rsrcs/PaperPlaneTilt.svg";
 import bookmarkIcon from "../../rsrcs/bookmark-icon.svg";
+import smallHeart from "../../rsrcs/heart-icon.svg";
 
 const FeedsCard = () => {
   const [feedContent, setFeedContent] = useState([
@@ -13,6 +14,7 @@ const FeedsCard = () => {
       userProfile: thumbnail,
       userSponsor: "",
       postImage: postImage,
+      datePosted: "25 minutes",
       postTitle:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae dictum ex. Duis eget urna ac metus egestas fringilla sed ac sapien. #postText.",
       like: 25000,
@@ -84,7 +86,10 @@ const FeedsCard = () => {
               <h3>{feed.like.toLocaleString()} Likes</h3>
             </div>
 
-            <div className="postTitle__wrapper" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'break-word' }}>
+            <div
+              className="postTitle__wrapper"
+              style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word" }}
+            >
               <p>
                 <a>
                   <span>{feed.userHandle}</span>
@@ -94,7 +99,24 @@ const FeedsCard = () => {
             </div>
 
             <div className="postComment__wrapper">
+              <a className="viewAllComment__btn">
+                View all {feed.comments.length} comments
+              </a>
+              <div className="comments__wrapper">
+                {feed.comments.map((comment) => (
+                  <div>
+                    <span>
+                      <a href="#">{comment.commenterHandle}</a>{" "}
+                      <small> {comment.comment}</small>
+                    </span>
+                    <img src={smallHeart} />
+                  </div>
+                ))}
+              </div>
 
+              <div className="postedDate__wrapper">
+                <small>{feed.datePosted} ago</small>
+              </div>
             </div>
           </div>
         </div>

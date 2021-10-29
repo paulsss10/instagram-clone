@@ -45,15 +45,21 @@
       .stories-section__wrapper {
         display: flex;
         flex-direction: row;
-        background: $white;
-        border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
         border-radius: 3px;
-        margin-bottom: 24px;
-        margin-top: 32px;
-        padding: 16px 0 0 0;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding: 10px 0 0 0;
         overflow-x: auto; /*horizontal scroll on*/
         overflow-y: hidden; /*turn off vertical scroll*/
         white-space: nowrap; /*How text wraps around the container. none for this */
+
+        @include breakpoint-up(large) {
+          position: relative;
+          // height: 31rem;
+          width: 100%;
+          background: $white;
+          border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+        }
 
         .card__container {
           display: flex;
@@ -64,8 +70,10 @@
             }
 
             .card__image {
+              align-items: center;
+              justify-content: center;
               .card__thumnails {
-                width: 66px;
+                width: 50px;
                 border-radius: 55px;
               }
             }
@@ -199,7 +207,53 @@
             }
 
             .postComment__wrapper {
-              
+              margin-top: -7px;
+              .viewAllComment__btn {
+                color: gray;
+                font-size: 14px;
+              }
+
+              .comments__wrapper {
+                display: flex;
+                flex-direction: column;
+                margin-top: 5px;
+
+                div {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  width: 100%;
+
+                  span {
+                    a {
+                      font-size: 14px;
+                      font-weight: 700;
+                      color: $igBlack;
+                    }
+  
+                    small {
+                      font-size: 14px;
+                      margin-left: 5px;
+                    }
+                  }
+
+                  
+
+                  img {
+                    align-self: flex-end;
+                    float: right;
+                    width: 15px;
+                  }
+                }
+              }
+
+              .postedDate__wrapper {
+                padding-top: 8px;
+                small {
+                  font-size: 12px;
+                  color: gray;
+                }
+              }
             }
           }
         }
