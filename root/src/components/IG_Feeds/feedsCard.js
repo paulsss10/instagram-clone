@@ -31,6 +31,28 @@ const FeedsCard = () => {
         },
       ],
     },
+    {
+      userHandle: "jordi_alba18",
+      userProfile: thumbnail,
+      userSponsor: "",
+      postImage: postImage,
+      datePosted: "25 minutes",
+      postTitle:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae dictum ex. Duis eget urna ac metus egestas fringilla sed ac sapien. #postText.",
+      like: 25000,
+      comments: [
+        {
+          commenterHandle: "Commenter 1",
+          comment: "Hey this is a comment!",
+          like: 2,
+        },
+        {
+          commenterHandle: "Commenter 2",
+          comment: "Hey this is a comment!",
+          like: 1,
+        },
+      ],
+    },
   ]);
 
   return (

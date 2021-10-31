@@ -8,21 +8,28 @@ import dummy_profile from '../../rsrcs/profile-dummy.jpg';
 const Header = () => {
     return (
         <div className="header-section__wrapper container--px">
+            <div className="camera">
+            <img alt="home" src={home_logo} />
+            </div>
             <div className="logo">
                 <img alt="Instagram" src={instagram_logo} />
             </div>
 
+            <div className="search desktop">
+                <input type="text" placeholder="Search" />
+            </div>
+
             <div className="menus">
-                <a>
+                <a className="desktop">
                     <img alt="home" src={home_logo} />
                 </a>
                 <a>
                     <img alt="messenger" src={messenger_logo} />
                 </a>
-                <a>
-                    <img alt="notification" src={heart_logo} />
+                <a className="desktop">
+                    <img alt="notification"  src={heart_logo} />
                 </a>
-                <div className="profile-menu">
+                <div className="profile-menu desktop">
                     <img src={dummy_profile} />
                 </div>
             </div>

@@ -16,19 +16,80 @@
         margin: 0 auto;
         max-width: 975px;
 
+        .desktop {
+            @include breakpoint-down(medium) {
+                display: none;
+            }
+        }
+
+        .camera {
+            @include breakpoint-up(large) {
+                display: none;
+            }
+        }
 
         .logo {
             padding-top: 8px;
+        }
+
+        .search {
+            input {
+                padding: 7px; 
+                width: 100%;
+                border: solid 1px#dbdbdb;
+                border-radius: 3px;
+                background: rgba(var(--b3f,250,250,250),1);
+                color: rgba(var(--f52,142,142,142),1) !important;
+                text-align: center;
+                cursor: text;
+                font-size: 14px;
+                font-weight: 300;
+
+                :focus {
+                    border: solid 1px#bebebe;
+                }
+                
+            }
+
+            // Align placeholder center
+            ::-webkit-input-placeholder {
+                text-align: center;
+              }
+              
+              :-moz-placeholder {
+                text-align: center;
+              }
+
+              :focus {
+                text-align: left;
+                left: -5px;
+                border: 0;
+                 
+              }
+
+            @include breakpoint-down(medium) {
+                display: none;
+            }
         }
 
         .menus {
             display: flex;
             flex-direction: row;
             align-items: center;
+
+            .desktop {
+                @include breakpoint-down(medium) {
+                    display: none;
+                }
+            }
             
             a {
                 &:not(:last-child) {
                     margin-right: 18px;
+
+                    @include breakpoint-down(medium) {
+                        margin: 0;
+                    }
                 }
             }
 

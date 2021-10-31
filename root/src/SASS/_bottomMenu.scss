@@ -1,0 +1,35 @@
+.bottomMenu-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: $white;
+
+    @include breakpoint-up(large) {
+        display: none;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly !important;
+        align-items: center;
+        height: 54px;
+        margin: 0 auto;
+        // max-width: 975px;
+        width: 100%;
+
+        a {
+
+        }
+    
+        .profile-menu {
+            width: 27px;
+            height: 27px;
+            border-radius: 18px;
+        }
+    }
+}
