@@ -6,6 +6,7 @@ import commentIcon from "../../rsrcs/comment-icon.svg";
 import shareIcon from "../../rsrcs/PaperPlaneTilt.svg";
 import bookmarkIcon from "../../rsrcs/bookmark-icon.svg";
 import smallHeart from "../../rsrcs/heart-icon.svg";
+import smileyIcon from "../../rsrcs/smiley-icon.svg"
 
 const FeedsCard = () => {
   const [feedContent, setFeedContent] = useState([
@@ -138,6 +139,20 @@ const FeedsCard = () => {
 
               <div className="postedDate__wrapper">
                 <small>{feed.datePosted} ago</small>
+              </div>
+
+              <div className="addComment__wrapper">
+                <div className="emoji-button">
+                  <img alt="emoji" src={smileyIcon} />
+                </div>
+
+                <div className="comment-input">
+                  <input type="text" />
+                </div>
+                
+                <div className="post-button">
+                  <a>Post</a>
+                </div>
               </div>
             </div>
           </div>
