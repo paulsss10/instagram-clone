@@ -6,11 +6,13 @@ import commentIcon from "../../rsrcs/comment-icon.svg";
 import shareIcon from "../../rsrcs/PaperPlaneTilt.svg";
 import bookmarkIcon from "../../rsrcs/bookmark-icon.svg";
 import smallHeart from "../../rsrcs/heart-icon.svg";
-import smileyIcon from "../../rsrcs/smiley-icon.svg"
+import smileyIcon from "../../rsrcs/smiley-icon.svg";
+import likedIcon from "../../rsrcs/liked-icon.svg";
 
 const FeedsCard = () => {
   const [feedContent, setFeedContent] = useState([
     {
+      id: 1,
       userHandle: "jordi_alba18",
       userProfile: thumbnail,
       userSponsor: "",
@@ -18,7 +20,8 @@ const FeedsCard = () => {
       datePosted: "25 minutes",
       postTitle:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae dictum ex. Duis eget urna ac metus egestas fringilla sed ac sapien. #postText.",
-      like: 25000,
+      likes: 25000,
+      likeStatus: false,
       comments: [
         {
           commenterHandle: "Commenter 1",
@@ -33,6 +36,7 @@ const FeedsCard = () => {
       ],
     },
     {
+      id: 2,
       userHandle: "jordi_alba18",
       userProfile: thumbnail,
       userSponsor: "",
@@ -40,7 +44,8 @@ const FeedsCard = () => {
       datePosted: "25 minutes",
       postTitle:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae dictum ex. Duis eget urna ac metus egestas fringilla sed ac sapien. #postText.",
-      like: 25000,
+      likes: 25000,
+      likeStatus: false,
       comments: [
         {
           commenterHandle: "Commenter 1",
@@ -55,6 +60,10 @@ const FeedsCard = () => {
       ],
     },
   ]);
+
+  const setYouLike = (e) => {
+    document.getElementById(e).classList.add('liked');
+  }
 
   return (
     <>
@@ -79,7 +88,7 @@ const FeedsCard = () => {
           </div>
 
           {/* card post image */}
-          <div className="postImage__container">
+          <div className="postImage__container" onDoubleClick={(e)=> setYouLike(feed.id)}>
             <img alt="post image" src={feed.postImage} />
           </div>
 
@@ -88,7 +97,7 @@ const FeedsCard = () => {
             <div className="postActions__wrapper">
               <div className="postActions__left">
                 <a>
-                  <img src={likeIcon} />
+                  {feed.likeStatus === true ? <img src={likedIcon} id={feed.id} /> : <img src={likeIcon} id={feed.id} />}
                 </a>
                 <a>
                   <img src={commentIcon} />
@@ -106,7 +115,7 @@ const FeedsCard = () => {
             </div>
 
             <div className="postLikesCount__wrapper">
-              <h3>{feed.like.toLocaleString()} Likes</h3>
+              <h3>{feed.likes.toLocaleString()} Likes</h3>
             </div>
 
             <div
@@ -147,7 +156,7 @@ const FeedsCard = () => {
                 </div>
 
                 <div className="comment-input">
-                  <input type="text" />
+                  <input type="text" placeholder="Type here" />
                 </div>
                 
                 <div className="post-button">

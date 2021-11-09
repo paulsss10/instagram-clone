@@ -23,7 +23,7 @@ function App() {
             <Suggestions />
           </div>
         </div>
-       
+
         <section className="bottomMenu-section">
           <Bottom_menu />
         </section>

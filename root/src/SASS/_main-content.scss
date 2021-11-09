@@ -206,6 +206,8 @@
                   &:not(:first-child) {
                     padding: 8px 0 8px 15px;
                   }
+
+                  
                 }
               }
             }
@@ -300,12 +302,15 @@
                   width: 82%;
 
                   input {
-                    font-size: 14px;
                     width: 100%;
                     padding-top: 6px;
                     padding-bottom: 6px;
                     border: none;
                     outline: none;
+                    color: rgba(var(--f52,142,142,142),1) !important;
+                    cursor: text;
+                    font-size: 14px;
+                    font-weight: 300;
                   }
                   
                 }
@@ -389,6 +394,22 @@
               font-weight: 600;
               font-size: 12px;
             }
+          }
+
+
+        }
+
+        .suggestionsForUser {
+          margin-top: 12px;
+          padding-top: 4px;
+          small {
+            color: gray;
+            font-weight: 600;
+            
+          }
+
+          .suggestions-wrapper {
+            padding: 8px 0;
           }
         }
       }
