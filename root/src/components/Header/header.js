@@ -15,7 +15,7 @@ import {
 
 const Header = () => {
     return (
-      <Router>
+      // <Router>
         <div className="header-section__wrapper container--px">
           <div className="camera">
             <Link to="/">
@@ -54,7 +54,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </Router>
+      // </Router>
     );
 }
 

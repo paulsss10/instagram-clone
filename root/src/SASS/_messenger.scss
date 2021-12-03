@@ -1,0 +1,37 @@
+.messenger-section__wrapper {
+  .header {
+    width: 100%;
+    padding: 0 16px;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.7px solid rgba(var(--b6a, 219, 219, 219), 1);
+
+    .header-subContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .back_arrow-container {
+    }
+
+    .title-container {
+      h2 {
+        font-size: 1rem;
+        margin: 0;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .new_chat-container {
+      img {
+        color: #0000;
+      }
+    }
+  }
+}
