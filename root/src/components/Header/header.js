@@ -18,9 +18,9 @@ const Header = () => {
       <Router>
         <div className="header-section__wrapper container--px">
           <div className="camera">
-            {/* <Link to="/"> */}
+            <Link to="/">
             <img alt="home" src={camera_logo} />
-            {/* </Link> */}
+            </Link>
           </div>
           <div className="logo">
             <Link to="/">
@@ -38,7 +38,7 @@ const Header = () => {
                 <img alt="home" src={home_logo} />
               </a>
             </Link>
-            <Link to="/">
+            <Link to="/messages">
               <a>
                 <img alt="messenger" src={messenger_logo} />
               </a>
